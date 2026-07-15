@@ -1,0 +1,211 @@
+.interaction-form {
+  padding: 24px 28px 60px;
+}
+
+.interaction-form__title-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.interaction-form__title-row h2 {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 4px;
+}
+
+.interaction-form__hint {
+  font-size: 12.5px;
+  color: var(--color-text-muted);
+  margin: 0;
+  max-width: 44ch;
+}
+
+.badge {
+  font-size: 12px;
+  font-weight: 700;
+  padding: 5px 10px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.badge--logged {
+  color: var(--color-positive);
+  background: var(--color-positive-soft);
+}
+
+.compliance-banner {
+  margin: 14px 0;
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  background: var(--color-negative-soft);
+  color: var(--color-negative);
+  font-size: 13px;
+  font-weight: 600;
+  border: 1px solid rgba(201, 74, 74, 0.25);
+}
+
+.section-heading {
+  font-size: 12.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-text-muted);
+  margin: 28px 0 14px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.field-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px 20px;
+}
+
+.field {
+  margin-bottom: 16px;
+  padding: 6px 8px;
+  margin-left: -8px;
+  margin-right: -8px;
+  border-radius: var(--radius-sm);
+  border-left: 3px solid transparent;
+  transition: background 1.6s ease, border-color 1.6s ease;
+}
+
+.field--changed {
+  background: var(--color-highlight-soft);
+  border-left-color: var(--color-highlight);
+  transition: background 0s, border-color 0s;
+  animation: field-settle 1.8s ease forwards;
+}
+
+@keyframes field-settle {
+  0% {
+    background: var(--color-highlight-soft);
+    border-left-color: var(--color-highlight);
+  }
+  70% {
+    background: var(--color-highlight-soft);
+    border-left-color: var(--color-highlight);
+  }
+  100% {
+    background: transparent;
+    border-left-color: transparent;
+  }
+}
+
+.field__label {
+  display: block;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  margin-bottom: 6px;
+}
+
+.interaction-form input[type="text"],
+.interaction-form input:not([type]),
+.interaction-form select,
+.interaction-form textarea {
+  width: 100%;
+  padding: 9px 11px;
+  font-size: 13.5px;
+  color: var(--color-text);
+  background: #fbfcfd;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  resize: vertical;
+}
+
+.interaction-form input::placeholder,
+.interaction-form textarea::placeholder {
+  color: var(--color-text-faint);
+}
+
+.interaction-form input,
+.interaction-form select,
+.interaction-form textarea {
+  pointer-events: none;
+}
+
+.placeholder-text {
+  color: var(--color-text-faint);
+  font-size: 13px;
+}
+
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  min-height: 20px;
+  margin-bottom: 8px;
+}
+
+.chip {
+  background: var(--color-primary-soft);
+  color: var(--color-primary-dark);
+  font-size: 12.5px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.btn--disabled-hint {
+  font-size: 12.5px;
+  padding: 6px 12px;
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.sentiment-row {
+  display: flex;
+  gap: 10px;
+}
+
+.sentiment-option {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 7px 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+  pointer-events: none;
+}
+
+.sentiment-option input {
+  pointer-events: none;
+  width: auto;
+}
+
+.sentiment-option:has(input:checked) {
+  border-width: 1px;
+}
+
+.sentiment-option--positive:has(input:checked) {
+  background: var(--color-positive-soft);
+  border-color: var(--color-positive);
+  color: var(--color-positive);
+}
+
+.sentiment-option--neutral:has(input:checked) {
+  background: var(--color-neutral-sent-soft);
+  border-color: var(--color-neutral-sent);
+  color: var(--color-neutral-sent);
+}
+
+.sentiment-option--negative:has(input:checked) {
+  background: var(--color-negative-soft);
+  border-color: var(--color-negative);
+  color: var(--color-negative);
+}
+
+@media (max-width: 560px) {
+  .field-grid {
+    grid-template-columns: 1fr;
+  }
+}

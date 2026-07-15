@@ -1,0 +1,15 @@
+fastapi==0.139.0
+uvicorn[standard]==0.50.2
+sqlalchemy==2.0.51
+pydantic==2.13.4
+python-dotenv==1.2.2
+langgraph==1.2.8
+langchain-groq==1.1.3
+langchain-core==1.4.8
+
+# PostgreSQL driver (recommended path, see README.md).
+psycopg2-binary==2.9.12
+
+# If you'd rather use MySQL instead of PostgreSQL, comment out
+# psycopg2-binary above and uncomment the line below:
+# pymysql==1.1.1
